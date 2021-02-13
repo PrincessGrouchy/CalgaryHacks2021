@@ -1,3 +1,22 @@
+form {
+  background: #000;
+  padding: 3px;
+  position: relative;
+  bottom: 0;
+  max-height: 10%;
+}
+form input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: 0.5%;
+}
+form button {
+  width: 9%;
+  background: rgb(130, 224, 255);
+  border: none;
+  padding: 10px;
+}
 #messagesContainer {
   /* list-style-type: none; */
   margin-bottom: 10%;
@@ -25,16 +44,15 @@
 }
 
 .userMessage {
-    font-weight: bold;
-    text-align: right;
-  }
+  font-weight: bold;
+  text-align: right;
+}
 
 #messages li:nth-child(odd) {
   background: #eee;
 }
 
-#chatbox {
-  position: fixed;
-  width: 40%;
-  bottom: 0;
+
+h3 {
+  font-size: 15px;
 }

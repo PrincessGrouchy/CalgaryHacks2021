@@ -56,9 +56,30 @@
     </script>
 
     <link rel="stylesheet" href="chatWithBot.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function () {
+            var socket = io();
+            $('form').submit(function (e) {
+                e.preventDefault(); // prevents page reloading
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+            });
+            socket.on('chat history', function (msg) {
+                $('#messages').empty();
+                for (x of msg) {
+
+                    //$('#messages').prepend("<li" + colorHTML + ">" + x + "</li>");
+                    $('#messages').prepend("<li>"
+                        + x + "</li>");
+
+                }
+            });
+        });
+    </script>
 </head>
-
-
 
 <body>
     <!-- insert sidebar here -->
@@ -74,10 +95,11 @@
                     <a href="http://localhost:5500/webpage.html#">HOME</a>
                 </li>
                 <li>
-                    <a href="https://getbootstrap.com/">ASSIGNMENTS</a>
+                    <a href="assignment.html">ASSIGNMENTS</a>
                 </li>
                 <li>
-                    <a href="#">EXTRA MATERIALS</a>
+                    <a href="materials.html">EXTRA MATERIALS</a>
+                </li>
                 </li>
                 <li>
                     <a href="#">STUDENTS</a>
@@ -86,43 +108,44 @@
                     <a href="showCal.html">MEETING</a>
                 </li>
                 <li>
-                    <a href="#">ASK A QUESTION</a>
+                    <a href="chatWithBot.html">ASK A QUESTION</a>
                 </li>
                 <li>
                     <a href="#">SETTINGS</a>
                 </li>
             </ul>
         </nav>
-        <!-- Page Content  -->
-        <div id="content" class="container">
-            <nav class="navbar navbar-expand-lg ">
-                
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                
-            </nav>
-            <div class="row">
-                <div class="col">
-                    <h3>Question 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <h3>Question 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <h3>Question 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                </div>
-                <div class="col-sm">
-                    <div class="messagesDivClass" id=messagesContainer>
-                        <ul id="messages">
-                            <li>Chattie: Hello user!</li>
-                            <li>Chattie: Is your question about an assignment?</li>
-                            <li class="userMessage">Rebecca: Assignment 2</li>
-                            <li>Chattie: Great! Here's some info about Assignment 2 Questions.</li>
-                            <li>Chattie: Which question did you want to ask about?</li>
-                        </ul>
-                    </div>
-                    <div id="chatbox" class="align-items-bottom">
+    </div>
+    <!-- Page Content  -->
+    <div id="content" class="container">
+        <nav class="navbar navbar-expand-lg ">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </nav>
+        <div class="row">
+            <div class="col">
+                <h3>Question 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <h3>Question 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <h3>Question 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </div>
+            <div class="col-sm">
+                <!-- <div class="messagesDivClass" id=messagesContainer>
+                    <ul id="messages">
+                        <li>Chattie: Hello user!</li>
+                        <li>Chattie: Is your question about an assignment?</li>
+                        <li class="userMessage">Rebecca: Assignment 2</li>
+                        <li>Chattie: Great! Here's some info about Assignment 2 Questions.</li>
+                        <li>Chattie: Which question did you want to ask about?</li>
+                    </ul>
+                </div> -->
+                <!-- <div id="chatbox" class="align-items-bottom">
                         <button type="button" class="btn btn-info btn-rounded btn-sm">Question 1</button>
                         <button type="button" class="btn btn-info btn-rounded btn-sm">Question 2</button>
                         <button type="button" class="btn btn-info btn-rounded btn-sm">Question 3</button>
@@ -133,11 +156,16 @@
                         </li>
                         <button type="button"
                             class="btn btn-info btn-rounded btn-sm waves-effect waves-light float-right">Send</button>
+                    </div> -->
+                <div id="messagesDiv">
+                    <div class="messagesDivClass" id=messagesContainer>
+                        <ul id="messages"></ul>
                     </div>
+                    <form class="formClass" action="">
+                        <input id="m" autocomplete="off" /><button>Send</button>
+                    </form>
                 </div>
             </div>
-
-
         </div>
     </div>
 </body>
