@@ -1,0 +1,40 @@
+#messagesContainer {
+  /* list-style-type: none; */
+  margin-bottom: 10%;
+  width: 100%;
+  vertical-align: bottom;
+  flex: 1;
+  flex-grow: 4;
+}
+
+.messagesDivClass {
+  flex: 9;
+  position: relative;
+  bottom: 0;
+}
+#messages {
+  list-style-type: none;
+  vertical-align: bottom;
+  /* overflow-y: scroll; */
+}
+
+#messages li {
+  padding: 5px 10px;
+  height: 5%;
+  /* font-weight: bold; */
+}
+
+.userMessage {
+    font-weight: bold;
+    text-align: right;
+  }
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+
+#chatbox {
+  position: fixed;
+  width: 40%;
+  bottom: 0;
+}
