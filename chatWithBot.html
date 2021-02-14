@@ -108,6 +108,7 @@
             </p>
             <div class="row">
                 <div class="col-6">
+                    <h3> Results</h3>
                     <button type="button" style="background-color: #6d7fcc;" class="btn btn-info" data-toggle="collapse"
                         data-target="#question1">Question
                         1</button>
@@ -120,10 +121,13 @@
                         data-target="#question3">Question
                         3</button>
                     <div id="question1" class="collapse">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <pre> Immediately before the collision, 
+the momentum of the locomotive–car system is
+A. 5.01 × 105 kg.m/s, 68.2° north of east
+B. 5.01 × 105 kg.m/s, 3.43° north of east
+C. 5.30 × 105 kg.m/s, 68.2° north of east
+D. 5.30 × 105 kg.m/s, 3.43° north of east</pre>
+                        <img src="CalgaryHackAssignmentQ1.PNG" alt="CalgaryHackAssignmentQ1" style="max-width: 60%;">
                     </div>
                     <div id="question2" class="collapse">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -141,9 +145,16 @@
                 <div class="col-6">
                     <div id="messagesDiv">
                         <div class="messagesDivClass" id=messagesContainer>
-                            <ul id="messages"></ul>
+                            <ul id="messages">
+                                <li>Chattie: Hello Rebecca!</li>
+                                <li>Chattie: Is your question about an assignment? If so, which? Otherwise, keep typing
+                                    to see results for your question.</li>
+                                <li class="userMessage">Rebecca: Assignment 2</li>
+                                <li>Chattie: Great! Here's some info about Assignment 2 Questions.</li>
+                                <li>Chattie: Which question did you want to ask about?</li>
+                            </ul>
                         </div>
-                        <div d="buttonFlex">
+                        <!-- <div d="buttonFlex">
                             <button type="button" style="background-color: #6d7fcc;" class="btn btn-info"
                                 data-toggle="collapse" data-target="#question1">Question
                                 1</button>
@@ -156,9 +167,9 @@
                             <button type="button" style="background-color: #6d7fcc;" class="btn btn-info"
                                 data-toggle="collapse" data-target="#prof">Prof
                             </button>
-                        </div>
+                        </div> -->
                         <form id="messageID" class="formClass" action="">
-                            <input id="m" autocomplete="off" /><button>Send</button>
+                            <input id="m" autocomplete="off" placeholder="Question 1, 2, or 3" /><button>Send</button>
                         </form>
                     </div>
                 </div>

@@ -18,28 +18,29 @@ http.listen(2999, () => {
 io.on('connection', (socket) => {
     var connectMessage = new Date().toUTCString() + ' | System: User connected: ';
     console.log(connectMessage);
-    io.emit('chat history', chatHistory);
+    //io.emit('chat history', chatHistory);
 
     socket.on('chat message', (msg) => {
         var messageToWrite = msg;
         console.log("final message emitted: " + messageToWrite);
         chatHistory.unshift(messageToWrite);
+        let here = '<span style="color:blue;"> here </span>';
         if (msg.includes("uestion")) {
             // console.log("found possible emoji");
             if (msg.includes("1")) {
-                chatHistory.unshift("For question 1, here are some materials."
+                chatHistory.unshift("For question 1," + here + "are some materials."
                     + "<br>Describe your problem to narrow the results."
-                    + "<br>Click 'Prof' to draft a message to the prof");
+                    + "<br>Type 'Prof' to draft a message to the prof");
             }
             else if (msg.includes("2")) {
-                chatHistory.unshift("For question 2, here are some materials."
+                chatHistory.unshift("For question 2, " + here + " are some materials."
                     + "<br>Describe your problem to narrow the results."
-                    + "<br>Click 'Prof' to draft a message to the prof");
+                    + "<br>Type 'Prof' to draft a message to the prof");
             }
             else if (msg.includes("3")) {
-                chatHistory.unshift("For question 3, here are some materials."
+                chatHistory.unshift("For question 3, " + here + " are some materials."
                     + "<br>Describe your problem to narrow the results."
-                    + "<br>Click 'Prof' to draft a message to the prof");
+                    + "<br>Type 'Prof' to draft a message to the prof");
             }
             else {
                 chatHistory.unshift("Please state the question number ");
@@ -52,9 +53,10 @@ io.on('connection', (socket) => {
                 "<br>Timestamp: " + new Date().toUTCString() +
                 "<br>Assignment Question: XXX" +
                 "<br> Steps already completed: XXX" +
-                "<br>Question: ");
+                "<br>Question: " +
+                '<br><br><b><span style="color:blue;"> Send </span></b>');
         }
-        if (msg.includes("prof filled")) {
+        if (msg.includes("send")) {
             chatHistory.unshift("The following message sent to prof." +
                 "<br>Assignment: 1" +
                 "<br>Timestamp: " + new Date().toUTCString() +
