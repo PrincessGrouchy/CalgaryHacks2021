@@ -5,7 +5,7 @@ for CalgaryHacks 2021
 
 # Sidenote:
 
-chat doesn't work, as it's supported by socket.io. https://socket.io/get-started/chat
+chat doesn't work on github pages, as it's supported by socket.io. https://socket.io/get-started/chat
 
 # To run locally:
 
