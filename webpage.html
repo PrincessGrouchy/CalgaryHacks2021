@@ -40,7 +40,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
-        
+
     <script type="text/javascript">
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
@@ -54,12 +54,25 @@
             });
         });
     </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
 </head>
 
 <body>
-    <!-- insert sidebar here -->
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("sidebar.html");
+            });
+        </script>
+    </div>
+
+
+    <!--end of Navigation bar-->
+    <!-- 
     <div class="wrapper">
-        <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Unicron </h3>
@@ -76,25 +89,25 @@
                     <a href="materials.html">EXTRA MATERIALS</a>
                 </li>
                 <li>
+                    <a href="chatWithBot.html">ASK A QUESTION</a>
+                </li>
+                <li>
                     <a href="#">STUDENTS</a>
+                </li>
+                <li>
+                    <a href="#">PROFESSOR</a>
                 </li>
                 <li>
                     <a href="showCal.html">MEETING</a>
                 </li>
-                <li>
-                    <a href="chatWithBot.html">ASK A QUESTION</a>
-                </li>
-                <li>
-                    <a href="#">SETTINGS</a>
-                </li>
+
             </ul>
         </nav>
 
-        <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+                <div class="container-fluid" >
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #6d7fcc;"> 
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
@@ -103,45 +116,30 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
-
-                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div> -->
                 </div>
-            </nav>
-            <h2>Write on main page</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
+            </nav> -->
+    <h2>Welcome to Unicron!</h2>
+    <p>
+        Unicron is a website that allows students to interact with their professor seamlessly.
+        It provides professors a site where they can easily place assignments, and extra materials for students to work
+        on.
+        Students can find solutions to exercises problem quickly and look at the recommended YouTube video on a certain
+        topic(s).
+        Additonally, the site provides a chat function where, using a bot, they can find solutions to the problem if it
+        was asked by
+        another student and the question were answered. The bot can also provide them with links to the exericse
+        questions and solution and a youtube video.
+        If the question has not been answered yet, the bot also connects students to anohter students suck on a similar
+        question. And finally,
+        the bot allows students to interact with their professor. The professor is provided with a digital whiteboard
+        where they can work, step by step,
+        through a problem with a student.
+        Lastly the student could view their professor calender and find an open office hour to get a more in-depth
+        response to their question.
+
+
+    </p>
+    </div>
     </div>
 </body>
 

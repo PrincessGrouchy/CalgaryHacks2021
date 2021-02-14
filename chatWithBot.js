@@ -8,7 +8,6 @@ var chatHistory = [];
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-    //   res.send('<h1>Hello world</h1>');
     res.sendFile(__dirname + '/chatWithBot.html');
 });
 
@@ -20,25 +19,53 @@ io.on('connection', (socket) => {
     var connectMessage = new Date().toUTCString() + ' | System: User connected: ';
     console.log(connectMessage);
     io.emit('chat history', chatHistory);
-    
+
     socket.on('chat message', (msg) => {
-        //console.log('message received: ' + msg);
         var messageToWrite = msg;
-        // var systemMessage;
         console.log("final message emitted: " + messageToWrite);
-        //io.emit('chat message', newMessage);
         chatHistory.unshift(messageToWrite);
-        // if (systemMessage) {
-        //     chatHistory.unshift(new Date().toUTCString() + systemMessage);
-        // }
+        if (msg.includes("uestion")) {
+            // console.log("found possible emoji");
+            if (msg.includes("1")) {
+                chatHistory.unshift("For question 1, here are some materials."
+                    + "<br>Describe your problem to narrow the results."
+                    + "<br>Click 'Prof' to draft a message to the prof");
+            }
+            else if (msg.includes("2")) {
+                chatHistory.unshift("For question 2, here are some materials."
+                    + "<br>Describe your problem to narrow the results."
+                    + "<br>Click 'Prof' to draft a message to the prof");
+            }
+            else if (msg.includes("3")) {
+                chatHistory.unshift("For question 3, here are some materials."
+                    + "<br>Describe your problem to narrow the results."
+                    + "<br>Click 'Prof' to draft a message to the prof");
+            }
+            else{
+                chatHistory.unshift("Please state the question number ");
+            }
+        }
+        if (msg.includes("prof")) {
+            chatHistory.unshift("Suggested message to prof. Once the message is completed," +
+                "it will be sent to the prof." +
+                "<br>Assignment: XXX" +
+                "<br>Timestamp: " + new Date().toUTCString() +
+                "<br>Assignment Question: XXX" +
+                "<br> Steps already completed: XXX" +
+                "<br>Question: ");
+        }
+        if (msg.includes("prof filled")) {
+            chatHistory.unshift("The following message sent to prof." +
+                "<br>Assignment: 1" +
+                "<br>Timestamp: " + new Date().toUTCString() +
+                "<br>Assignment Question: 2" +
+                "<br> Steps already completed: Took the sq.root of both sides. Divided by 2" +
+                "<br>Questio I can't figure out how to combine the 2^3 and the 2^4");
+        }
         io.emit('chat history', chatHistory);
     });
 
     socket.on('disconnect', () => {
         console.log('user disconnected:');
-        // var disconnectMessage = new Date().toUTCString() + ' | System:  User disconnected: ';
-        //io.emit('chat message', newMessage);
-        // chatHistory.unshift(disconnectMessage);
-        // io.emit('chat history', chatHistory);
     });
 });
