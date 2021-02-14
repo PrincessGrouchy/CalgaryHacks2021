@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<p>
 
-<head>
-    <title>professor</title>
-    <link rel="icon" type="image/png" href="unicorn.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -61,69 +57,4 @@
 
     <!-- Testing if dropdown works -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="chatWithBot.css">
-    <script src="/socket.io/socket.io.js"></script>
-
-    <script>
-        $(function () {
-            var socket = io();
-            $('form').submit(function (e) {
-                e.preventDefault(); // prevents page reloading
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
-                return false;
-            });
-            socket.on('chat history', function (msg) {
-                $('#messages').empty();
-                for (x of msg) {
-
-                    //$('#messages').prepend("<li" + colorHTML + ">" + x + "</li>");
-                    $('#messages').prepend("<li>"
-                        + x + "</li>");
-
-                }
-            });
-        });
-    </script>
-</head>
-
-<body>
-    <div class="row">
-        <div class="col-2">
-            <!--Navigation bar-->
-            <div id="nav-placeholder">
-            </div>
-            <script>
-                $.get("sidebar.html", function (data) {
-                    $("#nav-placeholder").replaceWith(data);
-                });
-            </script>
-        </div>
-
-        <!-- Page Content  -->
-        <div id="content" style="padding-left: 3%; padding-top:6%;">
-            <h2> Talk with the Prof</h2>
-            <p>
-                Chat with the prof, and share a whiteboard with the prof
-            </p>
-            <div class="row">
-                <div class="col">
-                    <canvas id="canvas"></canvas>
-                    <script src="professor.js"></script>
-                </div>
-                <div class="col-sm">
-                    <div id="messagesDiv">
-                        <div class="messagesDivClass" id=messagesContainer>
-                            <ul id="messages"></ul>
-                        </div>
-                        <form id="messageID" class="formClass" action="">
-                            <input id="m" autocomplete="off" /><button>Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-</body>
-
-</html>
+</p>

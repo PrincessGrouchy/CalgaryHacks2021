@@ -7,13 +7,14 @@
   /* max-height: 100%; */
 }
 form {
-  background: #000;
+  background:#6d7fcc;
   padding: 3px;
   position: relative;
   bottom: 0;
   /* width: 100%;
   max-width: 960px; */
   max-height: 10%;
+  border-radius: 5px;
 }
 form input {
   border: 0;
@@ -23,7 +24,7 @@ form input {
 }
 form button {
   width: 9%;
-  background: rgb(130, 224, 255);
+  background: #6d7fcc;
   border: none;
   padding: 10px;
 }
