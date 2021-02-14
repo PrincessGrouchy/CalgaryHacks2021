@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
                     + "<br>Describe your problem to narrow the results."
                     + "<br>Click 'Prof' to draft a message to the prof");
             }
-            else{
+            else {
                 chatHistory.unshift("Please state the question number ");
             }
         }

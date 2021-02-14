@@ -55,91 +55,54 @@
         });
     </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 </head>
 
 <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder">
-        <script>
-            $(function () {
-                $("#nav-placeholder").load("sidebar.html");
-            });
-        </script>
-    </div>
-
-
-    <!--end of Navigation bar-->
-    <!-- 
-    <div class="wrapper">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Unicron </h3>
+    <div class="row">
+        <div class="col-2">
+            <!--Navigation bar-->
+            <div id="nav-placeholder">
             </div>
-
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="http://localhost:5500/webpage.html#">HOME</a>
-                </li>
-                <li>
-                    <a href="assignment.html">ASSIGNMENTS</a>
-                </li>
-                <li>
-                    <a href="materials.html">EXTRA MATERIALS</a>
-                </li>
-                <li>
-                    <a href="chatWithBot.html">ASK A QUESTION</a>
-                </li>
-                <li>
-                    <a href="#">STUDENTS</a>
-                </li>
-                <li>
-                    <a href="#">PROFESSOR</a>
-                </li>
-                <li>
-                    <a href="showCal.html">MEETING</a>
-                </li>
-
-            </ul>
-        </nav>
-
-        <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-                <div class="container-fluid" >
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #6d7fcc;"> 
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                </div>
-            </nav> -->
-    <h2>Welcome to Unicron!</h2>
-    <p>
-        Unicron is a website that allows students to interact with their professor seamlessly.
-        It provides professors a site where they can easily place assignments, and extra materials for students to work
-        on.
-        Students can find solutions to exercises problem quickly and look at the recommended YouTube video on a certain
-        topic(s).
-        Additonally, the site provides a chat function where, using a bot, they can find solutions to the problem if it
-        was asked by
-        another student and the question were answered. The bot can also provide them with links to the exericse
-        questions and solution and a youtube video.
-        If the question has not been answered yet, the bot also connects students to anohter students suck on a similar
-        question. And finally,
-        the bot allows students to interact with their professor. The professor is provided with a digital whiteboard
-        where they can work, step by step,
-        through a problem with a student.
-        Lastly the student could view their professor calender and find an open office hour to get a more in-depth
-        response to their question.
+            <script>
+                $.get("sidebar.html", function (data) {
+                    $("#nav-placeholder").replaceWith(data);
+                });
+            </script>
+        </div>
+        
+        <div class="col-10" style="padding-left: 3%; padding-top:6%;">
+            <h2>Welcome to Unicron!</h2>
+            <p>
+                Unicron is a website that allows students to interact with their professor seamlessly.
+                It provides professors a site where they can easily place assignments, and extra materials for students
+                to
+                work
+                on.
+                Students can find solutions to exercises problem quickly and look at the recommended YouTube video on a
+                certain
+                topic(s).
+                Additonally, the site provides a chat function where, using a bot, they can find solutions to the
+                problem if
+                it
+                was asked by
+                another student and the question were answered. The bot can also provide them with links to the exericse
+                questions and solution and a youtube video.
+                If the question has not been answered yet, the bot also connects students to anohter students suck on a
+                similar
+                question. And finally,
+                the bot allows students to interact with their professor. The professor is provided with a digital
+                whiteboard
+                where they can work, step by step,
+                through a problem with a student.
+                Lastly the student could view their professor calender and find an open office hour to get a more
+                in-depth
+                response to their question.
 
 
-    </p>
-    </div>
+            </p>
+        </div>
     </div>
 </body>
 

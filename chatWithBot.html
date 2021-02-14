@@ -88,103 +88,75 @@
 </head>
 
 <body>
-
-    <!-- insert sidebar here -->
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Unicron </h3>
+    <div class="row">
+        <div class="col-2">
+            <!--Navigation bar-->
+            <div id="nav-placeholder">
             </div>
-
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="http://localhost:5500/webpage.html#">HOME</a>
-                </li>
-                <li>
-                    <a href="assignment.html">ASSIGNMENTS</a>
-                </li>
-                <li>
-                    <a href="materials.html">EXTRA MATERIALS</a>
-                </li>
-                <li>
-                    <a href="chatWithBot.html">ASK A QUESTION</a>
-                </li>
-                <li>
-                    <a href="#">STUDENTS</a>
-                </li>
-                <li>
-                    <a href="#">PROFESSOR</a>
-                </li>
-                <li>
-                    <a href="showCal.html">MEETING</a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>
-    <!-- Page Content  -->
-    <div id="content" class="container">
-        <nav class="navbar navbar-expand-lg ">
-
-            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #6d7fcc;">
-                <i class="fas fa-align-left"></i>
-                <span>Toggle Sidebar</span>
-            </button>
-
-        </nav>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question1">Question
-                    1</button>
-                <div id="question1" class="collapse">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question2">Question
-                    2</button>
-                <div id="question2" class="collapse">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question3">Question
-                    3</button>
-                <div id="question3" class="collapse">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-            </div>
-            <div class="col-sm">
-                <div id="messagesDiv">
-                    <div class="messagesDivClass" id=messagesContainer>
-                        <ul id="messages"></ul>
+            <script>
+                $.get("sidebar.html", function (data) {
+                    $("#nav-placeholder").replaceWith(data);
+                });
+            </script>
+        </div>
+        <!-- Page Content  -->
+        <div id="content" style="padding-left: 3%; padding-top:6%;">
+            <h2> Ask a Question</h2>
+            <p>
+                Ask the bot a question, and see results
+            </p>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question1">Question
+                        1</button>
+                    <div id="question1" class="collapse">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
-                    <div d="buttonFlex">
-                        <button type="button" class="btn btn-info" data-toggle="collapse"
-                            data-target="#question1">Question
-                            1</button>
-                        <button type="button" class="btn btn-info" data-toggle="collapse"
-                            data-target="#question2">Question
-                            2</button>
-                        <button type="button" class="btn btn-info" data-toggle="collapse"
-                            data-target="#question3">Question
-                            3</button>
-                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#prof">Prof
-                        </button>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question2">Question
+                        2</button>
+                    <div id="question2" class="collapse">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
-                    <form id="messageID" class="formClass" action="">
-                        <input id="m" autocomplete="off" /><button>Send</button>
-                    </form>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#question3">Question
+                        3</button>
+                    <div id="question3" class="collapse">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="messagesDiv">
+                        <div class="messagesDivClass" id=messagesContainer>
+                            <ul id="messages"></ul>
+                        </div>
+                        <div d="buttonFlex">
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#question1">Question
+                                1</button>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#question2">Question
+                                2</button>
+                            <button type="button" class="btn btn-info" data-toggle="collapse"
+                                data-target="#question3">Question
+                                3</button>
+                            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#prof">Prof
+                            </button>
+                        </div>
+                        <form id="messageID" class="formClass" action="">
+                            <input id="m" autocomplete="off" /><button>Send</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
