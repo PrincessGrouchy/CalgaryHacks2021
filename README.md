@@ -3,6 +3,7 @@ Feb 14, 2021
 by Rebecca Reid and Isaiah Asaolu
 for CalgaryHacks 2021
 
+https://devpost.com/software/unicron-ai
 # Sidenote:
 
 chat doesn't work on github pages, as it's supported by socket.io. https://socket.io/get-started/chat
